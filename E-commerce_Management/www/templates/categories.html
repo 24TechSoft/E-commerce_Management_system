@@ -1,0 +1,40 @@
+<ion-view view-title="Categories">
+  	<ion-content> 
+  		<div class="card text-center" style="margin-top: 50px;">
+  			<img src="img/fruits.png" style="width:30%;" alt="fruit" />
+  			<p>FRUITS</p>
+		</div>
+		<div class="card text-center">
+			<img src="img/vegitables.png" style="width:40%;" alt="veg" />
+			<p>VEGITABLES</p>
+		</div>
+		<div class="card text-center">
+			<img src="img/rice.png" style="width:30%;" alt="rice" />
+			<p>RICE</p>
+		</div>
+	</ion-content>
+	<div class="tabs tabs-icon-top" style="color:#28a54c;" id="foot-menu">
+        <a class="tab-item" href="#/app/home">
+          <i class="icon ion-home"></i>
+          Home
+        </a>
+        <a class="tab-item" href="#/app/categories">
+          <i class="icon ion-grid"></i>
+          Categories
+        </a>
+         <a class="tab-item">
+          <i class="icon ion-search"></i>
+          Search
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-ios-pricetags"></i>
+          Offers
+        </a>
+        <a class="tab-item" href="javascript:void(0)" ng-click="showCart()">
+          <span class="cart" ng-show="total_qty>0">{{total_qty}}</span>
+          <i class="icon ion-android-cart"></i>
+          Cart
+        </a>
+    </div>
+    <a class="float-cart" id="float-cart" href="javascript:void(0)" ng-click="showCart()"><span class="cartf" ng-show="total_qty>0">{{total_qty}}</span><img src="img/cart.png" alt="cart" style="width:50px;"></a>
+</ion-view>

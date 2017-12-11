@@ -1,0 +1,153 @@
+<ion-view view-title="Abad">
+	<ion-content on-scroll="scrollFunction()" on-scroll-complete="scrollb()">
+    	<div class="wrapper">
+    		<div class="top">
+		    	<div class="list list-inset">
+					<label class="item item-input">
+				    	<i class="icon ion-search placeholder-icon"></i>
+				    	<input type="text" list="browsers" placeholder="Search 1000+ fresh organic products">
+				    	<datalist id="browsers">
+						  <option value="Internet Explorer">
+						  <option value="Firefox">
+						  <option value="Chrome">
+						  <option value="Opera">
+						  <option value="Safari">
+						</datalist>
+				  	</label>
+				</div>
+			</div>
+			<ion-slide-box>
+				<ion-slide>
+			    	<img src="img/banners/5.jpg" alt="" class="img-100" style="height: 160px">
+			  	</ion-slide>
+			  	<ion-slide>
+			    	<img src="img/banners/4.png" alt="" class="img-100" style="height: 160px">
+			  	</ion-slide>
+			  	<ion-slide>
+			    	<img src="img/banners/3.jpg" alt="" class="img-100" style="height: 160px">
+			  	</ion-slide>
+			  	<ion-slide>
+			    	<img src="img/banners/2.jpg" alt="" class="img-100" style="height: 160px">
+			  	</ion-slide>
+			  	<ion-slide>
+			    	<img src="img/banners/1.jpg" alt="" class="img-100" style="height: 160px">
+			  	</ion-slide>
+			  	<ion-slide>
+			    	<img src="img/banners/5.jpg" alt="" class="img-100" style="height: 160px">
+			  	</ion-slide>
+			</ion-slide-box>
+			<div class="card">
+				<p class="heading item-divider">Shop By Category</p>
+				<div class="row">
+					<div class="col-33 text-center" style="padding-left: 3px">
+						<a href="#/app/products/1">
+						    <img src="img/abad_assets/Vegetables.jpg" alt="abad_categories" class="img-100">
+						    <p class="cat-title">
+						      <strong>Fresh Vegetables</strong>
+						    </p>
+						</a>
+					</div>
+					<div class="col-33 text-center" style="padding-right: 3px">
+						<a href="#/app/products/3">
+						    <img src="img/abad_assets/Fruits.jpg" alt="abad_categories" class="img-100">
+						    <p class="cat-title">
+						      <strong>Fresh Fruits</strong>
+						    </p>
+						</a>
+					</div>
+					<div class="col-33 text-center" style="padding-right: 3px">
+						<a href="#/app/products/2">
+						    <img src="img/abad_assets/Rice.jpg" alt="abad_categories" class="img-100">
+						    <p class="cat-title">
+						      <strong>Fresh Rice</strong>
+						    </p>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="offers padding">
+				<img class="img-100" src="img/offers/2.jpg" alt="offer-2">
+				<img class="img-100" src="img/offers/1.jpg" alt="offer-1">
+			</div>
+
+			<div class="card">
+				<p class="heading item-divider">Recently added items</p>
+
+				<div class="row border-bottom" ng-repeat="item in HomeCtrl.recentItems | limitTo:5">
+					<div class="col-33">
+						<!-- <span class="discount">10%</span> -->
+						<img src="http://abadagro.com/ItemPhoto/{{item.Photo}}" alt="abad_categories" class="img-100" style="margin-top: 13px;">
+					</div>
+					<div class="col-67 text-left padding">
+
+						    <p>
+						      <a href="#/app/product/single" class="text-light"><strong>{{item.ItemName}}</strong></a>
+						    </p>
+						    <p class="description">{{item.ItemDescription}}</p>
+						    <p class="text-light">1kg - approx. 13 to 14 nos</p>
+						    <p class="price">&#8377 {{item.CurrentPrice}}</p>
+						    <a class="button button-assertive" style="float: right;min-height: 0px;line-height: 30px;" href="#/app/product/single/{{item.ID}}">VIEW</a>
+					</div>
+
+				</div>
+				
+				<p class="text-center padding"><a href="" class="clean">View All Recommendations For You ></a></p>
+			</div>
+
+			<div class="offers padding">
+				<img class="img-100" src="img/offers/2.jpg" alt="offer-2">
+				<img class="img-100" src="img/offers/1.jpg" alt="offer-1">
+			</div>
+			<div class="card">
+				<p class="heading item-divider">Hot sellings</p>
+				<div class="row border-bottom" ng-repeat="hotitem in HomeCtrl.hotItems | limitTo:5">
+					<div class="col-33">
+						<!-- <span class="discount">10%</span> -->
+						<img src="http://abadagro.com/ItemPhoto/{{hotitem.Photo}}" alt="abad_categories" class="img-100" style="margin-top: 13px;">
+					</div>
+					<div class="col-67 text-left padding">
+
+						    <p>
+						      <a href="#/app/product/single" class="text-light"><strong>{{hotitem.ItemName}}</strong></a>
+						    </p>
+						    <p class="description">{{hotitem.ItemDescription}}</p>
+						    <p class="text-light">1kg - approx. 13 to 14 nos</p>
+						    <p class="price">&#8377 {{hotitem.CurrentPrice}}</p>
+						    <a class="button button-assertive" style="float: right;min-height: 0px;line-height: 30px;" href="#/app/product/single/{{hotitem.ID}}">VIEW</a>
+					</div>
+				</div>
+				
+				<p class="text-center padding"><a href="" class="clean">View All Products ></a></p>
+			</div>
+			<div class="bar bar-footer" style="position: relative;bottom: 0px;">
+			  <div class="title" style="font-size: 13px;line-height: 44px;font-weight: 100;">That's all olks!</div>
+			</div>
+	  	</div>
+	</ion-content>
+
+	<div class="tabs tabs-icon-top" style="color:#28a54c;" id="foot-menu">
+        <a class="tab-item" href="#/app/home">
+          <i class="icon ion-home"></i>
+          Home
+        </a>
+        <a class="tab-item" href="#/app/categories">
+          <i class="icon ion-grid"></i>
+          Categories
+        </a>
+         <a class="tab-item">
+          <i class="icon ion-search"></i>
+          Search
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-ios-pricetags"></i>
+          Offers
+        </a>
+        <a class="tab-item" href="javascript:void(0)" ng-click="showCart()">
+          <span class="cart" ng-show="total_qty>0">{{total_qty}}</span>
+          <i class="icon ion-android-cart"></i>
+          Cart
+        </a>
+    </div>
+    <a class="float-cart" id="float-cart" href="javascript:void(0)" ng-click="showCart()"><span class="cartf" ng-show="total_qty>0">{{total_qty}}</span><img src="img/cart.png" alt="cart" style="width:50px;"></a>
+</ion-view>

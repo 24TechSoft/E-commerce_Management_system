@@ -1,0 +1,55 @@
+<ion-view view-title="Update Account">
+  <ion-content>  
+    <div class="login-wrapper" style="margin-top: 20px;">
+     <div class="profile-panel padding">
+        <div class="row">
+          <div class="col-20">
+            <img src="img/profile1.png" alt="profile" style="width: 100%;" />
+          </div>
+          <div class="col-60" style="padding-left: 30px;font-size: 16px;">
+            <p><strong>{{ProfileCtrl.fname}}</strong></p>
+            <p>{{ProfileCtrl.email}}</p>
+            <p>{{ProfileCtrl.phone}}</p>
+          </div>
+          <div class="col-20">
+           
+          </div>
+      </div>
+      
+        <div class="padding" style="width:100%"">
+          <div class="addd row">
+            <div class="col-10" style="color:#ef473a;font-size: 40px;"><i class="ion ion-ios-location-outline"></i></div>
+            <div class="col-90" style="font-size: 14px;">{{ProfileCtrl.address}}, Pin. {{ProfileCtrl.pin}}, India.</div>
+            <div class="col-30"></div>
+          </div>
+        </div>
+      
+    </div>
+      
+      <div class="padding">
+        <input type="hidden" ng-model="data.id"  />
+        
+        <div class="form-group">
+          <span style="color: #b2b2b2;">E-mail</span>
+          <input type="text" name="" class="form-control" ng-model="data.email" ng-focus="hideError('email')" />
+          <p class="valid red-text animated shake" id="error-msg-email">*This field is required!</p>
+        </div>
+         <div class="form-group">
+          <span style="color: #b2b2b2;">Phone</span>
+          <input type="text" name="" class="form-control" ng-model="data.phone" ng-focus="hideError('phone')" />
+          <p class="valid red-text animated shake" id="error-msg-phone">*This field is required!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Address</span>
+          <input type="text" name="" class="form-control" ng-model="data.address" />
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Pincode</span>
+          <input type="text" name="" class="form-control" ng-model="data.pin" />
+        </div>
+      <button class="button button-full button-assertive" ng-click="updateAccount()" style="margin-top: 40px">UPDATE</button>
+      </div>
+      
+    </div>
+  </ion-content>
+</ion-view>

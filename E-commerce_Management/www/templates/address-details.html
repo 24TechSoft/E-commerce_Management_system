@@ -1,0 +1,38 @@
+<ion-view view-title="Select Address({{noOfAddress}})">
+	<ion-content>
+		<div class="address padding" style="margin-top: 20px;box-shadow: 1px 0px 5px rgba(128, 128, 128, 0.43);">
+				<a href="#/app/address/add" style="color: blue;"><i class="ion ion-ios-plus-empty"></i> Add a new address</a>
+		</div>
+
+		<div class="card padding" ng-repeat= "address in addresses">
+			<div class="row">
+				<div class="col-30">
+					 <label class="checkbox"><input ng-model="data.addressID" ng-value="{{address.ID}}" type="radio" name="add"></label>
+				</div>
+				<div class="col-70" style="margin-top: 7px;">
+					<p class="text-light" style="font-size:15px;">Bitopan Konwar</p>
+	    			<p style="font-size: 13px">{{address.AddressLine1}}, {{address.AddressLine2}}, {{address.Location}}, {{address.State}}<br/>{{address.City}} - {{address.PinCode}}</p>
+	    			<p>{{address.ContactNo}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-50 text-center">
+					<button class="button button-light" style="width: 98%;" ng-click="getEditAddress(address.ID,address.AddressLine1,address.AddressLine2,address.Location,address.State,address.City,address.PinCode,address.ContactNo,address.ContactPerson)"><i class="ion ion-edit"></i> Edit</button>
+				</div>
+				<div class="col-50 text-center">
+					<button class="button button-light" style="width: 95%;" ng-click="deleteAddress()"><i class="ion ion-trash-a"></i> Delete</button>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="bar bar-cart-footer">
+		 
+		</div>
+
+  	</ion-content>
+  	 <a  href="javascript:void(0)" style="color: white;" ng-click="getPaymentPage()">
+  	<div class="footer" style="height: 50px;text-align: center;padding-top: 15px;background: #ef473a;">
+	   DELIVER HERE
+    </div></a>
+</ion-view>

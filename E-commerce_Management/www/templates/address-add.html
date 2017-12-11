@@ -1,0 +1,52 @@
+<ion-view view-title="Add a new address">
+  <ion-content>  
+    <div class="login-wrapper">
+     
+      
+      <div class="form">
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Address Line 1</span>
+          <input type="text" name="" class="form-control" ng-model="data.address1"/>
+          <p class="alert danger animated shake" id="error-msg-address1" style="display: none;">Can't leave these field blank!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Address Line 2</span>
+          <input type="text" name="" class="form-control" ng-model="data.address2"/>
+          <p class="alert danger animated shake" id="error-msg-address2" style="display: none;">Can't leave these field blank!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Location</span>
+          <input type="text" name="" class="form-control" ng-model="data.location"/>
+          <p class="alert danger animated shake" id="error-msg-location" style="display: none;">Can't leave these field blank!</p>
+        </div>
+         <div class="form-group">
+          <span style="color: #b2b2b2;">City</span>
+          <input type="text" name="" class="form-control" ng-model="data.city"/>
+          <p class="alert danger animated shake" id="error-msg-city" style="display: none;">Can't leave these field blank!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">State</span>
+          <input type="text" name="" class="form-control" ng-model="data.state"/>
+          <p class="alert danger animated shake" id="error-msg-state" style="display: none;">Can't leave these field blank!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Pincode</span>
+          <input type="text" name="" class="form-control" ng-model="data.pin"/>
+          <p class="alert danger animated shake" id="error-msg-pin" style="display: none;">Can't leave these field blank!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Phone</span>
+          <input type="text" name="" class="form-control" ng-model="data.phone"/>
+          <p class="alert danger animated shake" id="error-msg-phone" style="display: none;">Can't leave these field blank!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Contact Person</span>
+          <input type="text" name="" class="form-control" ng-model="data.contactPerson"/>
+          <p class="alert danger animated shake" id="error-msg-contactPerson" style="display: none;">Can't leave these field blank!</p>
+        </div>
+      <button class="button button-full button-assertive" style="margin-top: 40px" ng-click="saveNewAddress()">SAVE</button>
+      </div>
+      
+    </div>
+  </ion-content>
+</ion-view>

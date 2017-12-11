@@ -1,0 +1,55 @@
+<ion-view view-title="Sign Up">
+  <ion-content>  
+    <div class="login-wrapper">
+      <p class="heading">Sign Up</p>
+      <div class="row">
+        <div class="col-50 text-center">
+        <button class="button button-fb"><i class="ion ion-social-facebook"></i></button>
+        </div>
+        <div class="col-50 text-center">
+          <button class="button button-gl"><i class="ion ion-social-googleplus"></i></button>
+        </div>
+      </div>
+      <p class="text-center" style="margin-top: 20px">OR</p>
+      <div class="form">
+        <div class="form-group">
+          <span style="color: #b2b2b2;">First Name</span>
+          <input type="text" name="" class="form-control" ng-model="data.first_name" ng-focus="hideError('fname')"/>
+          <p class="valid red-text animated shake" id="error-msg-fname">*This field is required!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Last Name</span>
+          <input type="text" name="" class="form-control" ng-model="data.last_name" ng-focus="hideError('lname')"/>
+          <p class="valid red-text animated shake" id="error-msg-lname">*This field is required!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">E-mail</span>
+          <input type="text" name="" class="form-control" ng-model="data.email" ng-focus="hideError('email')" ng-blur="getDuplicateEmail()" />
+          <p class="valid red-text animated shake" id="error-msg-email">*This field is required!</p>
+        
+        </div>
+         <div class="form-group">
+          <span style="color: #b2b2b2;">Phone</span>
+          <input type="text" name="" class="form-control" ng-model="data.phone" ng-focus="hideError('phone')" maxlength="10" restrict-to="[0-9]" ng-blur="getDuplicatePhone()" />
+          <p class="valid red-text animated shake" id="error-msg-phone">*This field is required!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Username</span>
+          <input type="text" name="" class="form-control" ng-model="data.username" ng-focus="hideError('username')" ng-blur="getDuplicateUserID()"/>
+          <p class="valid red-text animated shake" id="error-msg-username">*This field is required!</p>
+        </div>
+        <div class="form-group">
+          <span style="color: #b2b2b2;">Password</span>
+          <input type="password" name="" class="form-control" ng-model="data.password" ng-focus="hideError('password')"/>
+          <p class="valid red-text animated shake" id="error-msg-password">*This field is required!</p>
+        </div>
+         <div class="form-group">
+          <span style="color: #b2b2b2;">Confirm Password</span>
+          <input type="password" name="" class="form-control" ng-model="data.password_confirmation" ng-focus="hideError('mismatch')"/>
+          <p class="valid red-text animated shake" id="error-msg-mismatch">*This field is required!</p>
+        </div>
+        <button class="button button-full button-balanced" style="margin-top: 40px" ng-click="signup()">SIGN UP</button>
+      
+    </div>
+  </ion-content>
+</ion-view>

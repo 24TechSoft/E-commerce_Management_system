@@ -1,0 +1,56 @@
+<ion-view view-title="Order Details">
+	<ion-content>
+		<div class="address padding" style="margin-top: 20px;box-shadow: 1px 0px 5px rgba(128, 128, 128, 0.43);">
+				<p class="text-light" style="font-size:15px;">Bitopan Konwar</p>
+	    		<p style="font-size: 13px">House no. 23, ward no. 58, bongaon, beltola, assam, India<br/>Guwahati - 781022</p>
+	    		<p>8721037076</p>
+
+	    		<a href="#/app/address/details" class="button button-positive button-full">Change or Add Address</a>
+		</div>
+
+		<div class="card padding" ng-repeat="item in cart">
+			<div class="row">
+				<div class="col-67">
+					<p class="text-light">{{item.cart_item_name}}</p>
+		    		<p>Package: {{item.cart_package_name}}({{item.cart_package_qty}})</p>
+		    		<br>
+		    		<p style="font-size: 22px; font-weight: 500">&#8377; {{ item.cart_item_qty *  item.cart_item_price }}</p>
+		    		<strong>{{item.cart_item_qty}} x &#8377;{{item.cart_item_price}}</strong>
+		    		
+				</div>
+				<div class="col-33">
+					<img ng-src="http://abadagro.com/ItemPhoto/{{item.cart_item_image}}" alt="cart" style=" width: 100%;" />
+					<div style="width: 152px;border: 1px solid #ccc;padding: 9px 10px 9px 10px;border-radius: 10px;position: relative;float: right;">
+						<button ng-click="dec(item.cart_item_id,item.cart_id)" data-action="decrease" style="float: left;background: #ef473a;border-radius: 5px;color: white;border: 1px solid #ef473a;height: 25px;font-size: 15px;font-weight: 900;width: 25px;">-</button>
+						<input type="text" class="quantity" name="quantity" value="{{item.cart_item_qty}}" readonly="true" style="float: left;width: 80px;text-align: center;height: 25px;background: transparent;">
+						<button ng-click="inc(item.cart_item_id,item.cart_package_name,item.cart_item_qty,item.cart_package_qty,item.cart_item_price)" data-action="increase" style="background: #33cd5f;border-radius: 5px;color: white;border: 1px solid #33cd5f;height: 25px;font-size: 15px;font-weight: 900;width: 25px;">+</button></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="list">
+				<div class="item">
+					Price Details
+				</div>
+				<p class="row"><span class="col-67">Price({{ total_qty }} items)</span><span class="col-33" style="text-align: right;">&#8377; {{total_amount}}</span></p>
+				<p class="row"><span class="col-67">Delivery</span><span class="col-33" style="text-align: right;">Free</span></p>
+				<hr class="dashed">
+				<p class="row"><span class="col-67"><strong>Amount Payable</strong></span><span class="col-33" style="text-align: right;">&#8377; {{total_amount}}</span></p>
+			</div> 
+		</div>
+		<div class="bar bar-cart-footer">
+		  <div style="text-align: center; width: 100%;color: gray;">
+		  		Safe and Secure Payments. Easy returns.<br/>
+		  		100% Authentic products.
+		  </div>
+		</div>
+
+  	</ion-content>
+  		<div class="footer">
+        <div class="row" style="padding-top: 0px!important;padding-bottom: 0px!important;background: #fff;">
+        	<div class="col-60" style="margin-top: 12px;padding-left: 15px"><span style="font-size: 25px; font-weight: 500">&#8377; {{total_amount}}</span><p style="color: blue;">See above for price details.</p></div>
+        	<div class="col-40"><button ng-click="alert('Payment Page!')" class="button button-assertive button-full">Continue</button></div>
+        </div>
+        </div>
+</ion-view>

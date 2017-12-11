@@ -1,0 +1,51 @@
+<ion-view view-title="Abad">
+  <ion-content>  
+    <div class="profile-wrapper">
+      <div class="heading">MY ACCOUNT</div>
+      <div class="profile-panel padding">
+        <div class="row">
+          <div class="col-20">
+            <img src="img/profile1.png" alt="profile" style="width: 100%;" />
+          </div>
+          <div class="col-60" style="padding-left: 30px;font-size: 16px;">
+            <p><strong>{{ProfileCtrl.fname}}</strong></p>
+            <p>{{ProfileCtrl.email}}</p>
+            <p>{{ProfileCtrl.phone}}</p>
+          </div>
+          <div class="col-20">
+            <a href="#/app/profile/update">
+              <i class="ion ion-edit" style="float: right;font-size: 20px;color: #fff"></i>
+            </a>
+          </div>
+      </div>
+      
+        <div class="padding" style="width:100%"">
+          <div class="addd row">
+            <div class="col-10" style="color:#ef473a;font-size: 40px;padding-top: 10px"><i class="ion ion-ios-location-outline"></i></div>
+            <div class="col-60" style="font-size: 14px;">{{ProfileCtrl.address}}, Pin. {{ProfileCtrl.pin}}, India.</div>
+            <div class="col-30"><button class="button button-light" style="position: absolute;min-height: 0px;line-height: 30px;border-color: #ef473a;color: #ef473a;margin-top: 10px;right: 7%;">Change</button></div>
+          </div>
+        </div>
+      
+    </div>
+      <div class="list">
+        <a class="item item-icon-left" href="#/app/orders">
+          <i class="icon ion-ios-clock-outline"></i>
+         My Orders
+         </a>
+         <a class="item item-icon-left" href="#/app/change/password">
+          <i class="icon ion-ios-locked-outline"></i>
+         Chnage Password
+         </a>
+         <a class="item item-icon-left" href="#/app/address/details">
+          <i class="icon ion-ios-location-outline"></i>
+          My Delivery Address
+        </a>
+        <a class="item item-icon-left" ng-click="logout()">
+          <i class="icon ion-log-out"></i>
+          Logout
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

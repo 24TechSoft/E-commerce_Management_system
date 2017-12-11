@@ -1,0 +1,51 @@
+<ion-view view-title="Update address">
+	<ion-content>  
+	    <div class="login-wrapper">
+	    	<div class="card">
+			<ul class="list">
+				<input type="hidden" ng-model="data.address">
+		        <li class="item item-checkbox" style="border-bottom: 1px solid;">
+		        	<h1 style="font-size: 24px">
+		        		Cash On Delivery
+		        	</h1>
+		           <label class="checkbox">
+		             <input type="radio" ng-model="data.paymentType" ng-value="1">
+		           </label>
+		          
+		        </li>
+		        <li class="item item-checkbox" style="border-bottom: 1px solid;">
+		        	<h1 style="font-size: 24px">
+		        		Internet Banking
+		        	</h1> 
+		           <label class="checkbox">
+		             <input type="radio" ng-model="data.paymentType" ng-value="2">
+		           </label>
+		          
+		        </li>
+		         <li class="item item-checkbox" style="border-bottom: 1px solid;">
+		        	<h1 style="font-size: 24px">
+		        		Debit Card
+		        	</h1> 
+		           <label class="checkbox">
+		             <input type="radio" ng-model="data.paymentType" ng-value="3">
+		           </label>
+		          
+		        </li>
+		         <li class="item item-checkbox" style="border-bottom: 1px solid;">
+		        	<h1 style="font-size: 24px">
+		        		Credit Card
+		        	</h1> 
+		           <label class="checkbox">
+		             <input type="radio" ng-model="data.paymentType" ng-value="4">
+		           </label>
+		          
+		        </li>
+		     </ul>
+		 	</div>
+		</div>
+	</ion-content>
+	<a style="color: white;" ng-click="placeOrder()">
+  	<div class="footer" style="height: 50px;text-align: center;padding-top: 15px;background: #ef473a;">
+	   Make Payment
+    </div></a>
+</ion-view>

@@ -1,0 +1,78 @@
+<ion-view view-title="Products">
+	<ion-content on-scroll="scrollFunction()" on-scroll-complete="scrollb()">
+    	<div class="wrapper" style="text-align: center;">
+    		<p class="heading item-divider">Fresh {{ProductCtrl.catName.Category}}</p>
+
+    		<div class="card" ng-repeat="item in items | limitTo:numberOfItemsToDisplay">
+				
+				<div class="row">
+					<div class="col-33">
+						<a href="#/app/product/single/{{item.ItemID}}">
+						    <img ng-src="http://abadagro.com/ItemPhoto/{{item.Photo}}" alt="abad_categories" class="img-100" style="padding-top: 13px;">
+						</a>
+					</div>
+					<div class="col-67 text-left padding">
+						<a href="#/app/product/single/{{item.ItemID}}">
+						    <p class="text-light">
+						      <strong>{{item.ItemName}}</strong>
+						    </p>
+						    <p class="description">{{item.ItemDescription}}</p>
+						    <select id="package_{{item.ItemID}}" class="form-control select2 quantity">
+								<option ng-repeat="package in item.Packages | orderBy:'':true" value="{{package}}">{{package.PackageName}}</option>
+							</select>
+						</a>
+						<div class="row">
+							<div class="col-33"><p class="price">&#8377 <span id="price_{{item.ItemID}}">{{item.Packages[item.Packages.length -1].Price}}</span></p></div>
+							<span id="itemPackage_{{item.ItemID}}" style="display: none">{{item.Packages[item.Packages.length-1].PackageName}}</span>
+							<div class="col-77">
+								<div style="width: 152px;border: 1px solid #ccc;padding: 9px 10px 9px 10px;border-radius: 10px;position: relative;float: right;">
+									<button  class="incr-btn" data-action="decrease" style="float: left;background: #ef473a;border-radius: 5px;color: white;border: 1px solid #ef473a;height: 25px;font-size: 15px;font-weight: 900;width: 25px;">-</button>
+									<input type="text" id="quantity_{{item.ItemID}}" class="quantity" name="quantity" value="1" readonly="true" style="float: left;width: 80px;text-align: center;height: 25px;background: transparent;">
+									<button class="incr-btn" data-action="increase" style="background: #33cd5f;border-radius: 5px;color: white;border: 1px solid #33cd5f;height: 25px;font-size: 15px;font-weight: 900;width: 25px;">+</button>
+								</div>
+							</div>
+						</div>
+						    
+						
+						
+					
+						<button class="button button-assertive" style="float: right;padding: 0px 20px 0px 20px;min-height: 0px;line-height: 30px;margin-top: 5px;" ng-click="addToCart(item.ItemID,item.Photo,item.ItemName)">ADD</button>
+					</div>
+				</div>
+			</div>
+			<div class="card" ng-if="ProductCtrl.cnt == 0">
+				<div class="item item-text-wrap">
+					<p class="red-text">No item available!</p>
+				</div>
+			</div>
+    	</div>
+    	<ion-infinite-scroll on-infinite="addMoreItem()" distance="1%">
+		   
+		</ion-infinite-scroll>
+    </ion-content>
+
+    <div class="tabs tabs-icon-top" style="color:#28a54c;" id="foot-menu">
+        <a class="tab-item">
+          <i class="icon ion-home"></i>
+          Home
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-grid"></i>
+          Categories
+        </a>
+         <a class="tab-item">
+          <i class="icon ion-search"></i>
+          Search
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-ios-pricetags"></i>
+          Offers
+        </a>
+        <a class="tab-item" href="javascript:void(0)" ng-click="showCart()">
+          <span class="cart" ng-show="total_qty>0">{{total_qty}}</span>
+          <i class="icon ion-android-cart"></i>
+          Cart
+        </a>
+    </div>
+    <a class="float-cart" id="float-cart" href="javascript:void(0)" ng-click="showCart()"><span class="cartf" ng-show="total_qty>0">{{total_qty}}</span><img src="img/cart.png" alt="cart" style="width:50px;"></a>
+</ion-view>
